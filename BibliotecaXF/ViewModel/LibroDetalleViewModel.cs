@@ -7,6 +7,7 @@ namespace BibliotecaXF.ViewModel
 {
     class LibroDetalleViewModel
     {
-        public Libro libroSeleccionado;
+        public Libro LibroSeleccionado { get; set; }
+        
     }
 }

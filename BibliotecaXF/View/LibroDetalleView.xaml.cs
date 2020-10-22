@@ -1,4 +1,5 @@
-﻿using BibliotecaXF.ViewModel;
+﻿using BibliotecaXF.Model;
+using BibliotecaXF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,10 +12,10 @@ namespace BibliotecaXF.View
 {
     public partial class LibroDetalleView : ContentPage
     {
-        public LibroDetalleView()
+        public LibroDetalleView(Libro seleccionado)
         {
             InitializeComponent();
-            BindingContext = new LibroDetalleViewModel();
+            BindingContext = new LibroDetalleViewModel { LibroSeleccionado = seleccionado };
         }
     }
 }

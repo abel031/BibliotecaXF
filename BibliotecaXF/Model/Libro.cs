@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BibliotecaXF.Model
 {
-    class Libro
+    public class Libro
     {
 
         public string Titulo { get; set; }

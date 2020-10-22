@@ -1,4 +1,5 @@
-﻿using BibliotecaXF.ViewModel;
+﻿using BibliotecaXF.Model;
+using BibliotecaXF.ViewModel;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -27,11 +28,15 @@ namespace BibliotecaXF.View
             if (e.Item == null)
                 return;
 
-            Navigation.PushAsync(new LibroDetalleView());
+            await Navigation.PushAsync(new LibroDetalleView((Libro)((ListView)sender).SelectedItem));
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
-            ((ListView)sender).Item
+        }
+
+        async void Clicked_Inserta_Libro(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LibroDetalleView(new Libro()));
         }
     }
 }
