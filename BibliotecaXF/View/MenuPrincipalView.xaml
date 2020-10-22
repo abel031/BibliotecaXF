@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BibliotecaXF.View.MenuPrincipalView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Mantenimiento Socios" VerticalOptions="CenterAndExpand" Margin="10"
+                    Clicked="ClickedMantenimientoSocios"></Button>
+            <Button Text="Mantenimiento Libros" VerticalOptions="CenterAndExpand" Margin="10"
+                    Clicked="ClickedMantenimientoLibros"></Button>
+            <Button Text="Prestar" VerticalOptions="CenterAndExpand" Margin="10"></Button>
+            <Button Text="Devolver" VerticalOptions="CenterAndExpand" Margin="10"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
