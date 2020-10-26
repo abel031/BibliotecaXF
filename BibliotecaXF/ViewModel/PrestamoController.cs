@@ -11,7 +11,7 @@ namespace Biblioteca.Controlador
         public static void doPrestamo(Socio s, Libro l)
         {
             BD.Prestamos.Add(new Prestamo { libro = l, socio = s });
-            s.prestamos.Add(l);
+            s.Prestamos.Add(l);
             l.Prestado = true;
         }
 
@@ -22,7 +22,7 @@ namespace Biblioteca.Controlador
                 if(p.libro.ISBN==libro.ISBN && p.socio.DNI == socio.DNI)
                 {
                     BD.Prestamos.Remove(p);
-                    socio.prestamos.Remove(libro);
+                    socio.Prestamos.Remove(libro);
                     libro.Prestado = false;
                     break;
                 }

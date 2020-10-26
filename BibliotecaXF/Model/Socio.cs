@@ -9,7 +9,7 @@ namespace BibliotecaXF.Model
 
         public string DNI { get; set; }
         public string Nombre { get; set; }
-        public List<Libro> prestamos { get; set; } = new List<Libro>();
+        public List<Libro> Prestamos { get; set; } = new List<Libro>();
 
     }
 }
