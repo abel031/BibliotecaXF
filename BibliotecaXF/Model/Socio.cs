@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BibliotecaXF.Model
 {
-    class Socio
+    public class Socio
     {
 
         public string DNI { get; set; }

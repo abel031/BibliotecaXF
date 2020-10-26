@@ -1,4 +1,5 @@
-﻿using BibliotecaXF.ViewModel;
+﻿using BibliotecaXF.Model;
+using BibliotecaXF.ViewModel;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -27,10 +28,15 @@ namespace BibliotecaXF.View
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            await Navigation.PushAsync(new DetalleSocioView((Socio)((ListView)sender).SelectedItem));
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
+        }
+
+        async void Clicked_Inserta_Socio(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DetalleSocioView(new Socio()));
         }
     }
 }

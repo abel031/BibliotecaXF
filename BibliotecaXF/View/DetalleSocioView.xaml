@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BibliotecaXF.View.DetalleSocioView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="DNI"></Label>
+            <Entry Text="{Binding SocioSeleccionado.DNI}"></Entry>
+            <Label Text="Nombre"></Label>
+            <Entry Text="{Binding SocioSeleccionado.Nombre}"></Entry>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
