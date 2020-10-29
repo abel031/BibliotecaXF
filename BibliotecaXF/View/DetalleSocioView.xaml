@@ -4,10 +4,25 @@
              x:Class="BibliotecaXF.View.DetalleSocioView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="DNI"></Label>
-            <Entry Text="{Binding SocioSeleccionado.DNI}"></Entry>
-            <Label Text="Nombre"></Label>
-            <Entry Text="{Binding SocioSeleccionado.Nombre}"></Entry>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="DNI" Grid.Row="0" Grid.Column="0"/>
+                <Entry Text="{Binding SocioSeleccionado.DNI}" Grid.Row="0" Grid.Column="1"/>
+
+                <Label Text="Nombre" Grid.Row="1" Grid.Column="0"/>
+                <Entry Text="{Binding SocioSeleccionado.Nombre}" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+            <Button Text="Nuevo"></Button>
+            <Button Text="Guardar" Clicked="ClickedGuardar"></Button>
+            <Button Text="Borrar" Clicked="ClickedBorrar"></Button>
+            
 
         </StackLayout>
     </ContentPage.Content>

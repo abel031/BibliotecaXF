@@ -21,5 +21,14 @@ namespace BibliotecaXF.Helpers
 
 
         }
+
+        public static void saveSocio(Socio s)
+        {
+            Socios.Add(s);
+        }
+        public static void deleteSocio(Socio s)
+        {
+            Socios.Remove(s);
+        }
     }
 }

@@ -14,10 +14,22 @@ namespace BibliotecaXF.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetalleSocioView : ContentPage
     {
+        private SocioDetalleViewModel vm;
         public DetalleSocioView(Socio seleccionado)
         {
             InitializeComponent();
-            BindingContext = new SocioDetalleViewModel { SocioSeleccionado = seleccionado };
+            vm = new SocioDetalleViewModel { SocioSeleccionado = seleccionado };
+            BindingContext = vm;
+        }
+
+        private void ClickedGuardar(object sender, EventArgs e)
+        {
+           vm.saveSocio();
+        }
+
+        private void ClickedBorrar(object sender, EventArgs e)
+        {
+            vm.deleteSocio();
         }
     }
 }
