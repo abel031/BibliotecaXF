@@ -19,7 +19,7 @@
                 <Label Text="Nombre" Grid.Row="1" Grid.Column="0"/>
                 <Entry Text="{Binding SocioSeleccionado.Nombre}" Grid.Row="1" Grid.Column="1"/>
             </Grid>
-            <Button Text="Nuevo"></Button>
+            <Button Text="Nuevo" Clicked="ClickedNuevo"></Button>
             <Button Text="Guardar" Clicked="ClickedGuardar"></Button>
             <Button Text="Borrar" Clicked="ClickedBorrar"></Button>
             

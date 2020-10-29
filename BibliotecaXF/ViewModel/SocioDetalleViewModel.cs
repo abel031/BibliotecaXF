@@ -19,5 +19,10 @@ namespace BibliotecaXF.ViewModel
         {
             BD.deleteSocio(SocioSeleccionado);
         }
+
+        public void newSocio()
+        {
+            BD.addSocio(SocioSeleccionado);
+        }
     }
 }

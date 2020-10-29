@@ -31,5 +31,10 @@ namespace BibliotecaXF.View
         {
             vm.deleteSocio();
         }
+
+        private void ClickedNuevo(object sender, EventArgs e)
+        {
+            vm.newSocio();
+        }
     }
 }

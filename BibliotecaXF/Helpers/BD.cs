@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Biblioteca.Controlador;
 using BibliotecaXF.Model;
 
 namespace BibliotecaXF.Helpers
@@ -24,11 +25,25 @@ namespace BibliotecaXF.Helpers
 
         public static void saveSocio(Socio s)
         {
-            Socios.Add(s);
+            Socio sc = SocioController.GetSocio(s.DNI);
+            if (sc == null)
+            {
+                Socios.Add(s);
+            }
+            else
+            {
+                Socios.Remove(sc);
+                Socios.Add(s);
+            }
         }
+
         public static void deleteSocio(Socio s)
         {
             Socios.Remove(s);
+        }
+        public static void addSocio(Socio s)
+        {
+            Socios.Add(s);
         }
     }
 }
