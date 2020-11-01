@@ -45,5 +45,28 @@ namespace BibliotecaXF.Helpers
         {
             Socios.Add(s);
         }
+
+        public static void saveLibro(Libro l)
+        {
+            Libro lc = LibroController.GetLibro(l.ISBN);
+            if (lc == null)
+            {
+                Libros.Add(l);
+            }
+            else
+            {
+                Libros.Remove(lc);
+                Libros.Add(l);
+            }
+        }
+
+        public static void deleteLibro(Libro l)
+        {
+            Libros.Remove(l);
+        }
+        public static void addLibro(Libro l)
+        {
+            Libros.Add(l);
+        }
     }
 }

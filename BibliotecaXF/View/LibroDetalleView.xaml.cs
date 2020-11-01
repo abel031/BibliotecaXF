@@ -12,10 +12,27 @@ namespace BibliotecaXF.View
 {
     public partial class LibroDetalleView : ContentPage
     {
+        private LibroDetalleViewModel vm;
         public LibroDetalleView(Libro seleccionado)
         {
             InitializeComponent();
-            BindingContext = new LibroDetalleViewModel { LibroSeleccionado = seleccionado };
+            vm = new LibroDetalleViewModel { LibroSeleccionado = seleccionado };
+            BindingContext = vm;
+        }
+
+        private void ClickedNuevo(object sender, EventArgs e)
+        {
+            vm.newLibro();
+        }
+
+        private void ClickedGuardar(object sender, EventArgs e)
+        {
+            vm.saveLibro();
+        }
+
+        private void ClickedBorrar(object sender, EventArgs e)
+        {
+            vm.deleteLibro();
         }
     }
 }
