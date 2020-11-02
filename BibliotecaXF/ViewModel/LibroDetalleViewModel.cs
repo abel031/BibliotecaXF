@@ -7,9 +7,17 @@ using System.Text;
 
 namespace BibliotecaXF.ViewModel
 {
-    class LibroDetalleViewModel
+    class LibroDetalleViewModel : ViewModelBase
     {
-        public Libro LibroSeleccionado { get; set; }
+        private Libro _LibroSeleccionado;
+        public Libro LibroSeleccionado {
+            get { return _LibroSeleccionado; }
+            set
+            {
+                _LibroSeleccionado = value;
+                OnPropertyChanged();
+            }
+        }
         
         public void saveLibro()
         {

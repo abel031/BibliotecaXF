@@ -7,9 +7,16 @@ using System.Text;
 
 namespace BibliotecaXF.ViewModel
 {
-    class SocioDetalleViewModel
+    class SocioDetalleViewModel : ViewModelBase
     {
-        public Socio SocioSeleccionado { get; set; }
+        private Socio _SocioSeleccionado;
+        public Socio SocioSeleccionado {
+            get { return _SocioSeleccionado; }
+            set {
+                _SocioSeleccionado = value;
+                OnPropertyChanged();
+            } 
+        }
 
         public void saveSocio()
         {

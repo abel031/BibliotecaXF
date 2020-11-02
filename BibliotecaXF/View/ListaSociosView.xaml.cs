@@ -28,7 +28,7 @@ namespace BibliotecaXF.View
             if (e.Item == null)
                 return;
 
-            await Navigation.PushAsync(new DetalleSocioView((Socio)((ListView)sender).SelectedItem));
+            await Navigation.PushAsync(new SocioDetalleView((Socio)((ListView)sender).SelectedItem));
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
@@ -36,7 +36,7 @@ namespace BibliotecaXF.View
 
         async void Clicked_Inserta_Socio(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new DetalleSocioView(new Socio()));
+            await Navigation.PushAsync(new SocioDetalleView(new Socio()));
         }
     }
 }

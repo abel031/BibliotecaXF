@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BibliotecaXF.View.DetalleSocioView">
+             x:Class="BibliotecaXF.View.SocioDetalleView">
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -14,10 +14,10 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Label Text="DNI" Grid.Row="0" Grid.Column="0"/>
-                <Entry Text="{Binding SocioSeleccionado.DNI}" Grid.Row="0" Grid.Column="1"/>
+                <Entry Text="{Binding SocioSeleccionado.DNI, Mode=TwoWay}" Grid.Row="0" Grid.Column="1"/>
 
                 <Label Text="Nombre" Grid.Row="1" Grid.Column="0"/>
-                <Entry Text="{Binding SocioSeleccionado.Nombre}" Grid.Row="1" Grid.Column="1"/>
+                <Entry Text="{Binding SocioSeleccionado.Nombre, Mode=TwoWay}" Grid.Row="1" Grid.Column="1"/>
             </Grid>
             <Button Text="Nuevo" Clicked="ClickedNuevo"></Button>
             <Button Text="Guardar" Clicked="ClickedGuardar"></Button>

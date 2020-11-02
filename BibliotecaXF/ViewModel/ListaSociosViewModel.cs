@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BibliotecaXF.ViewModel
 {
-    class ListaSociosViewModel
+    class ListaSociosViewModel : ViewModelBase
     {
         public ObservableCollection<Socio> Socios { get; set; }
 

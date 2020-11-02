@@ -12,10 +12,10 @@ using Xamarin.Forms.Xaml;
 namespace BibliotecaXF.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DetalleSocioView : ContentPage
+    public partial class SocioDetalleView : ContentPage
     {
         private SocioDetalleViewModel vm;
-        public DetalleSocioView(Socio seleccionado)
+        public SocioDetalleView(Socio seleccionado)
         {
             InitializeComponent();
             vm = new SocioDetalleViewModel { SocioSeleccionado = seleccionado };

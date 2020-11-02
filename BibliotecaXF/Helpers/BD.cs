@@ -20,7 +20,6 @@ namespace BibliotecaXF.Helpers
             Libros.Add(new Libro { Titulo = "Fanta", Genero = "Fantasia", ISBN = "111" });
             Libros.Add(new Libro { Titulo = "Terro", Genero = "Terror", ISBN = "222" });
 
-
         }
     }
 }

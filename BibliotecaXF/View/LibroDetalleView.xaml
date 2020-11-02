@@ -16,16 +16,16 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Label Text="Titulo" Grid.Row="0" Grid.Column="0"/>
-            <Entry Text="{Binding LibroSeleccionado.Titulo}" Grid.Row="0" Grid.Column="1"/>
+            <Entry Text="{Binding LibroSeleccionado.Titulo, Mode=TwoWay}" Grid.Row="0" Grid.Column="1"/>
 
             <Label Text="ISBN" Grid.Row="1" Grid.Column="0"/>
-            <Entry Text="{Binding LibroSeleccionado.ISBN}" Grid.Row="1" Grid.Column="1"/>
+            <Entry Text="{Binding LibroSeleccionado.ISBN, Mode=TwoWay}" Grid.Row="1" Grid.Column="1"/>
 
             <Label Text="Genero" Grid.Row="2" Grid.Column="0"/>
-            <Entry Text="{Binding LibroSeleccionado.Genero}" Grid.Row="2" Grid.Column="1"/>
+            <Entry Text="{Binding LibroSeleccionado.Genero, Mode=TwoWay}" Grid.Row="2" Grid.Column="1"/>
 
             <Label Text="Prestat" Grid.Row="3" Grid.Column="0"/>
-            <CheckBox IsChecked="{Binding LibroSeleccionado.Prestado}" Grid.Row="3" Grid.Column="1"/>
+            <CheckBox IsChecked="{Binding LibroSeleccionado.Prestado, Mode=TwoWay}" Grid.Row="3" Grid.Column="1"/>
         </Grid>
         <Button Text="Nuevo" Clicked="ClickedNuevo"></Button>
         <Button Text="Guardar" Clicked="ClickedGuardar"></Button>

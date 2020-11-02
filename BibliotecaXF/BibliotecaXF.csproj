@@ -16,6 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\SocioDetalleView.xaml.cs">
+      <DependentUpon>SocioDetalleView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\LibroDetalleView.xaml.cs">
       <DependentUpon>LibroDetalleView.xaml</DependentUpon>
     </Compile>
@@ -25,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\DetalleSocioView.xaml">
+    <EmbeddedResource Update="View\SocioDetalleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\ListaLibrosView.xaml">
