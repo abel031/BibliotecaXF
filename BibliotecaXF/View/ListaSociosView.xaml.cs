@@ -14,12 +14,14 @@ namespace BibliotecaXF.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaSociosView : ContentPage
     {
+        SocioViewModel vm;
         public ObservableCollection<string> Items { get; set; }
 
         public ListaSociosView()
         {
             InitializeComponent();
-            BindingContext = new ListaSociosViewModel();
+            vm = new SocioViewModel();
+            BindingContext = vm;
 
         }
 
@@ -28,7 +30,8 @@ namespace BibliotecaXF.View
             if (e.Item == null)
                 return;
 
-            await Navigation.PushAsync(new SocioDetalleView((Socio)((ListView)sender).SelectedItem));
+            vm.SocioSeleccionado = ((Socio)((ListView)sender).SelectedItem);
+            await Navigation.PushAsync(new SocioDetalleView(vm));
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
