@@ -22,51 +22,5 @@ namespace BibliotecaXF.Helpers
 
 
         }
-
-        public static void saveSocio(Socio s)
-        {
-            Socio sc = SocioController.GetSocio(s.DNI);
-            if (sc == null)
-            {
-                Socios.Add(s);
-            }
-            else
-            {
-                Socios.Remove(sc);
-                Socios.Add(s);
-            }
-        }
-
-        public static void deleteSocio(Socio s)
-        {
-            Socios.Remove(s);
-        }
-        public static void addSocio(Socio s)
-        {
-            Socios.Add(s);
-        }
-
-        public static void saveLibro(Libro l)
-        {
-            Libro lc = LibroController.GetLibro(l.ISBN);
-            if (lc == null)
-            {
-                Libros.Add(l);
-            }
-            else
-            {
-                Libros.Remove(lc);
-                Libros.Add(l);
-            }
-        }
-
-        public static void deleteLibro(Libro l)
-        {
-            Libros.Remove(l);
-        }
-        public static void addLibro(Libro l)
-        {
-            Libros.Add(l);
-        }
     }
 }

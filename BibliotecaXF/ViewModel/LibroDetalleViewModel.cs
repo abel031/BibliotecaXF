@@ -1,4 +1,5 @@
-﻿using BibliotecaXF.Helpers;
+﻿using BibliotecaXF.DAO;
+using BibliotecaXF.Helpers;
 using BibliotecaXF.Model;
 using System;
 using System.Collections.Generic;
@@ -12,17 +13,17 @@ namespace BibliotecaXF.ViewModel
         
         public void saveLibro()
         {
-            BD.saveLibro(LibroSeleccionado);
+            LibroDAO.saveLibro(LibroSeleccionado);
         }
 
         public void deleteLibro()
         {
-            BD.deleteLibro(LibroSeleccionado);
+            LibroDAO.deleteLibro(LibroSeleccionado);
         }
 
         public void newLibro()
         {
-            BD.addLibro(LibroSeleccionado);
+            LibroSeleccionado = new Libro();
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using BibliotecaXF.Helpers;
+﻿using BibliotecaXF.DAO;
+using BibliotecaXF.Helpers;
 using BibliotecaXF.Model;
 using System;
 using System.Collections.Generic;
@@ -12,17 +13,17 @@ namespace BibliotecaXF.ViewModel
 
         public void saveSocio()
         {
-            BD.saveSocio(SocioSeleccionado);
+            SocioDAO.saveSocio(SocioSeleccionado);
         }
 
         public void deleteSocio()
         {
-            BD.deleteSocio(SocioSeleccionado);
+            SocioDAO.deleteSocio(SocioSeleccionado);
         }
 
         public void newSocio()
         {
-            BD.addSocio(SocioSeleccionado);
+            SocioSeleccionado = new Socio();
         }
     }
 }
