@@ -39,7 +39,8 @@ namespace BibliotecaXF.View
 
         async void Clicked_Inserta_Socio(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SocioDetalleView(new Socio()));
+            vm.SocioSeleccionado = new Socio();
+            await Navigation.PushAsync(new SocioDetalleView(vm));
         }
     }
 }
