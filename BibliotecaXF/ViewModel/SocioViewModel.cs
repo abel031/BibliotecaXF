@@ -42,8 +42,12 @@ namespace BibliotecaXF.ViewModel
             else
             {
                 var pos = Socios.IndexOf(SocioSeleccionado);
-                Socios[pos] = SocioSeleccionado;
-                OnPropertyChanged("Socios");
+                if (pos >= 0)
+                {
+                    Socios[pos] = SocioSeleccionado;
+                    OnPropertyChanged("Socios");
+                }
+                
             }
             SocioDAO.saveSocio(SocioSeleccionado);
         }
@@ -57,6 +61,7 @@ namespace BibliotecaXF.ViewModel
         public void newSocio()
         {
             SocioSeleccionado = new Socio();
+            OnPropertyChanged("SocioSeleccionado");
             nou = true;
         }
 
