@@ -1,4 +1,5 @@
-﻿using BibliotecaXF.Model;
+﻿using BibliotecaXF.Helpers.MiEventArgs;
+using BibliotecaXF.Model;
 using BibliotecaXF.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace BibliotecaXF.View
     public partial class SocioDetalleView : ContentPage
     {
         private SocioDetalleViewModel vm;
+
         public SocioDetalleView(Socio seleccionado)
         {
             InitializeComponent();
@@ -24,17 +26,35 @@ namespace BibliotecaXF.View
 
         private void ClickedGuardar(object sender, EventArgs e)
         {
-           vm.saveSocio();
+            OnSaveHandler();
+            vm.saveSocio();
         }
 
         private void ClickedBorrar(object sender, EventArgs e)
         {
             vm.deleteSocio();
+            OnDeleteHandler();
         }
 
         private void ClickedNuevo(object sender, EventArgs e)
         {
             vm.newSocio();
+        }
+
+        public event EventHandler<EventArgsSocio> DeleteHandler;
+        private void OnDeleteHandler()
+        {
+            EventArgsSocio evs = new EventArgsSocio();
+            evs.Socio = vm.SocioSeleccionado;
+            if (DeleteHandler != null) DeleteHandler(this, evs);
+        }
+
+        public event EventHandler<EventArgsSocio> SaveHandler;
+        private void OnSaveHandler()
+        {
+            EventArgsSocio evs = new EventArgsSocio();
+            evs.Socio = vm.SocioSeleccionado;
+            if (SaveHandler != null) SaveHandler(this, evs);
         }
     }
 }
