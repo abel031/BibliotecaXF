@@ -11,14 +11,7 @@ namespace BibliotecaXF.DAO
         public static void saveSocio(Socio s)
         {
             var pos = BD.Socios.IndexOf(s);
-            if (pos >= 0)
-            {
-                BD.Socios[pos] = s;
-            }
-            else
-            {
-                BD.Socios.Add(s);
-            }
+            BD.Socios[pos] = s;
         }
 
         public static void deleteSocio(Socio s)
@@ -26,10 +19,10 @@ namespace BibliotecaXF.DAO
             BD.Socios.Remove(s);
         }
 
-        /*public static void addSocio(Socio s)
+        public static void addSocio(Socio s)
         {
             BD.Socios.Add(s);
-        }*/
+        }
 
     }
 }

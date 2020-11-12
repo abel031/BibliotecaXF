@@ -26,8 +26,17 @@ namespace BibliotecaXF.View
 
         private void ClickedGuardar(object sender, EventArgs e)
         {
-            OnSaveHandler();
-            vm.saveSocio();
+            bool nuevo = vm.saveSocio();
+            if (nuevo)
+            {
+                OnSaveHandler();
+            }
+            else
+            {
+                OnModifyHandler();
+            }
+            
+            
         }
 
         private void ClickedBorrar(object sender, EventArgs e)
@@ -55,6 +64,14 @@ namespace BibliotecaXF.View
             EventArgsSocio evs = new EventArgsSocio();
             evs.Socio = vm.SocioSeleccionado;
             if (SaveHandler != null) SaveHandler(this, evs);
+        }
+
+        public event EventHandler<EventArgsSocio> ModifyHandler;
+        private void OnModifyHandler()
+        {
+            EventArgsSocio evs = new EventArgsSocio();
+            evs.Socio = vm.SocioSeleccionado;
+            if (ModifyHandler != null) ModifyHandler(this, evs);
         }
     }
 }

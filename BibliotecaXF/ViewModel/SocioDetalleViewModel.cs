@@ -18,9 +18,20 @@ namespace BibliotecaXF.ViewModel
             } 
         }
 
-        public void saveSocio()
+        bool nuevo = false;
+        public bool saveSocio()
         {
-            SocioDAO.saveSocio(SocioSeleccionado);
+            if (nuevo)
+            {
+                nuevo = false;
+                SocioDAO.addSocio(SocioSeleccionado);
+                return true;
+            }
+            else
+            {
+                SocioDAO.saveSocio(SocioSeleccionado);
+                return false;
+            }
         }
 
         public void deleteSocio()
@@ -30,6 +41,7 @@ namespace BibliotecaXF.ViewModel
 
         public void newSocio()
         {
+            nuevo = true;
             SocioSeleccionado = new Socio();
         }
     }

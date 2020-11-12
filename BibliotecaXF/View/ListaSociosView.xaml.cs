@@ -32,6 +32,7 @@ namespace BibliotecaXF.View
             var sociodetalle = new SocioDetalleView((Socio)e.Item);
             sociodetalle.DeleteHandler += OnDeleteSocioHandler;
             sociodetalle.SaveHandler += OnSaveSocioHandler;
+            sociodetalle.ModifyHandler += OnModifySocioHandler;
             await Navigation.PushAsync(sociodetalle);
 
             //Deselect Item
@@ -47,11 +48,16 @@ namespace BibliotecaXF.View
 
         void OnDeleteSocioHandler(object sender, EventArgsSocio e)
         {
-            vm.Socios.Remove(e.Socio);
+            vm.DeleteSocio(e.Socio);
         }
         void OnSaveSocioHandler(object sender, EventArgsSocio e)
         {
-            vm.Socios.Add(e.Socio);
+            vm.AddSocio(e.Socio);
+        }
+
+        void OnModifySocioHandler(object sender, EventArgsSocio e)
+        {
+            vm.ModifySocio(e.Socio);
         }
     }
 }
