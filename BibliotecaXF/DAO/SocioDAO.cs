@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BibliotecaXF.DAO
 {
-    class SocioDAO
+    public class SocioDAO
     {
         public static void saveSocio(Socio s)
         {

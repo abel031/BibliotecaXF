@@ -1,13 +1,16 @@
 ﻿using BibliotecaXF.Helpers;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BibliotecaXF.Model
 {
+    [Table("Socio")]
     public class Socio : NotifyPropertyBase
     {
-
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         private string _DNI;
         public string DNI
         {

@@ -22,7 +22,8 @@ namespace BibliotecaXF.ViewModel
 
         public ListaSociosViewModel()
         {
-            Socios = new ObservableCollection<Socio>(BD.Socios);
+            //Socios = new ObservableCollection<Socio>(BD.Socios);
+            Socios = new ObservableCollection<Socio>();
         }
 
         public void AddSocio(Socio s)
