@@ -1,13 +1,34 @@
 ﻿using BibliotecaXF.Helpers;
 using BibliotecaXF.Model;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BibliotecaXF.DAO
 {
-    class LibroDAO
+    public class LibroDAO
     {
+        private SQLiteAsyncConnection connection;
+
+        public LibroDAO(SQLiteAsyncConnection connection)
+        {
+            this.connection = connection;
+        }
+
+        public Task<List<Libro>> AllSocios()
+        {
+            return this.connection.Table<Libro>().ToListAsync();
+        }
+
+        public int Insert(Libro libro)
+        {
+            Task<int> filas = this.connection.InsertAsync(libro);
+            return filas.Result;
+        }
+
+
         public static void saveLibro(Libro l)
         {
             var pos = BD.Libros.IndexOf(l);

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BibliotecaXF.ViewModel
 {
@@ -23,7 +24,8 @@ namespace BibliotecaXF.ViewModel
         public ListaSociosViewModel()
         {
             //Socios = new ObservableCollection<Socio>(BD.Socios);
-            Socios = new ObservableCollection<Socio>();
+            Task<List<Socio>> tsocio = Providers.socioDAO.AllSocios();
+            Socios = new ObservableCollection<Socio>(tsocio.Result);
         }
 
         public void AddSocio(Socio s)

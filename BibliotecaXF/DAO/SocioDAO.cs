@@ -1,17 +1,31 @@
 ﻿using BibliotecaXF.Helpers;
 using BibliotecaXF.Model;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BibliotecaXF.DAO
 {
     public class SocioDAO
     {
-        public static void saveSocio(Socio s)
+        private SQLiteAsyncConnection connection;
+
+        public SocioDAO(SQLiteAsyncConnection connection)
         {
-            var pos = BD.Socios.IndexOf(s);
-            BD.Socios[pos] = s;
+            this.connection = connection;
+        }
+
+        public Task<List<Socio>> AllSocios()
+        {
+            return this.connection.Table<Socio>().ToListAsync();
+        }
+
+        public int Insert(Socio socio)
+        {
+            Task<int> filas = this.connection.InsertAsync(socio);
+            return filas.Result;
         }
 
         public static void deleteSocio(Socio s)

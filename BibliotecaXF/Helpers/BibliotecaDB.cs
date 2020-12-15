@@ -15,14 +15,19 @@ namespace BibliotecaXF.Helpers
             return new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         });
 
-        static SQLiteAsyncConnection ConectionDatabase => lazyInitializer.Value;
+        public static SQLiteAsyncConnection ConectionDatabase => lazyInitializer.Value;
         static bool initialized = false;
 
         public BibliotecaDB()
         {
-            ConectionDatabase.CreateTableAsync<Socio>().Wait();
             ConectionDatabase.CreateTableAsync<Libro>().Wait();
+            ConectionDatabase.CreateTableAsync<Socio>().Wait();
 
+            Providers.socioDAO.Insert(new Socio
+            {
+                DNI="111",
+                Nombre="pepe",
+            });
 
             //InitializeAsync().SafeFireAndForget(false);
         }

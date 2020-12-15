@@ -1,5 +1,6 @@
 ﻿using BibliotecaXF.Helpers;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -30,6 +31,7 @@ namespace BibliotecaXF.Model
                 OnPropertyChanged();
             }
         }
+        [OneToMany]
         public List<Libro> Prestamos { get; set; } = new List<Libro>();
 
     }

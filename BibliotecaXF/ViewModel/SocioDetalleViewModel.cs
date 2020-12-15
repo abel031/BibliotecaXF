@@ -9,6 +9,7 @@ namespace BibliotecaXF.ViewModel
 {
     class SocioDetalleViewModel : ViewModelBase
     {
+        private SocioDAO socioDao = Providers.socioDAO;
         private Socio _SocioSeleccionado;
         public Socio SocioSeleccionado {
             get { return _SocioSeleccionado; }
@@ -29,7 +30,7 @@ namespace BibliotecaXF.ViewModel
             }
             else
             {
-                SocioDAO.saveSocio(SocioSeleccionado);
+                socioDao.Insert(SocioSeleccionado);
                 return false;
             }
         }
