@@ -16,18 +16,17 @@ namespace BibliotecaXF.Helpers
         });
 
         public static SQLiteAsyncConnection ConectionDatabase => lazyInitializer.Value;
-        static bool initialized = false;
 
         public BibliotecaDB()
         {
-            ConectionDatabase.CreateTableAsync<Libro>().Wait();
-            ConectionDatabase.CreateTableAsync<Socio>().Wait();
+            /*ConectionDatabase.CreateTableAsync<Libro>().Wait();
+            ConectionDatabase.CreateTableAsync<Socio>().Wait();*/
 
-            Providers.socioDAO.Insert(new Socio
+           /* Providers.socioDAO.Insert(new Socio
             {
                 DNI="111",
                 Nombre="pepe",
-            });
+            });*/
 
             //InitializeAsync().SafeFireAndForget(false);
         }

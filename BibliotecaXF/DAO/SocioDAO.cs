@@ -17,25 +17,26 @@ namespace BibliotecaXF.DAO
             this.connection = connection;
         }
 
-        public Task<List<Socio>> AllSocios()
+        public Task<List<Socio>> AllSociosAsync()
         {
             return this.connection.Table<Socio>().ToListAsync();
         }
 
-        public int Insert(Socio socio)
+        public int InsertAsync(Socio socio)
         {
             Task<int> filas = this.connection.InsertAsync(socio);
             return filas.Result;
         }
 
-        public static void deleteSocio(Socio s)
+        public Task<int> deleteAsync(Socio s)
         {
-            BD.Socios.Remove(s);
+            Task<int> t= this.connection.DeleteAsync(s);
+            return t;
         }
 
-        public static void addSocio(Socio s)
+        public Task<int> ModifyAsunc(Socio s)
         {
-            BD.Socios.Add(s);
+            return this.connection.UpdateAsync(s);
         }
 
     }

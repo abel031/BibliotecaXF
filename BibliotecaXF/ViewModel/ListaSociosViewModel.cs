@@ -24,7 +24,7 @@ namespace BibliotecaXF.ViewModel
         public ListaSociosViewModel()
         {
             //Socios = new ObservableCollection<Socio>(BD.Socios);
-            Task<List<Socio>> tsocio = Providers.socioDAO.AllSocios();
+            Task<List<Socio>> tsocio = Providers.socioDAO.AllSociosAsync();
             Socios = new ObservableCollection<Socio>(tsocio.Result);
         }
 
